@@ -1,0 +1,12 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+data=pd.read_csv(r'C:\Users\archa\OneDrive\Desktop\Book1.csv')
+year_data=data[['Country Name','1961']]
+year_data=year_data.dropna()
+plt.figure(figsize=(20,20))
+plt.bar(year_data['Country Name'],year_data['1961'])
+plt.xticks(rotation=90)
+plt.xlabel('Country Name')
+plt.ylabel('Indicator Name')
+plt.title('population by country in 1961')
+plt.show()
