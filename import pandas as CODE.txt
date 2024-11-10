@@ -1,0 +1,25 @@
+import pandas as pd
+
+# Load the gender_submission file
+df = pd.read_csv(r"C:\Users\archa\Downloads\gender_submission (1).csv")
+
+# Display the first few rows
+print(df.head())
+
+# Summary of the data
+print(df.info())
+
+# Count of survivors and non-survivors
+print(df['Survived'].value_counts())
+
+# Simple visualization
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.set(style="whitegrid")
+
+# Plotting survival distribution
+plt.figure(figsize=(6, 4))
+sns.countplot(x='Survived', data=df)
+plt.title('Distribution of Survival')
+plt.show()
